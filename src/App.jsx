@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { data } from "./shows/data";
+import { tvShows } from "./shows/data";
 import ShowSelection from "./shows/ShowSelection";
 import ShowDetails from "./shows/ShowDetails";
 
 export default function App() {
-  const [shows, setShows] = useState(data);
+  const [shows, setShows] = useState(tvShows);
   const [selectedShow, setSelectedShow] = useState(null);
 
   return (
@@ -17,9 +17,9 @@ export default function App() {
           setSelectedShow={setSelectedShow}
         />
       </header>
-      
+
       <main>
-        {/* <ShowDetails /> */}
+        <ShowDetails show={selectedShow} />
       </main>
     </>
   );
